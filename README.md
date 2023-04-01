@@ -96,8 +96,8 @@ This does `not` compile the CSS, which doesn't require compilation. This simply 
 ## Using the compiler
    Include the script tag (coming to NPM soon, currently just clone this repo), and add this
    ```ts
-         import mHTMLCompiler from "path/to/file/here";
-         const compiler =  new mHTMLCompiler();
+   import mHTMLCompiler from "path/to/file/here";
+   const compiler =  new mHTMLCompiler();
    ```
    ### Compiling a string
    ```ts
@@ -105,13 +105,13 @@ This does `not` compile the CSS, which doesn't require compilation. This simply 
        // compiled is compiled mHTML. Add to document.
    ```
    ### Compiling CSS
-    Compiles CSS so that way selectors point to compiled selectors. `compile` does this internally.
-    ```
-    const css = compiler.compileCSS("css-containing-mhtml-selectors-here");
-    ```
+   Compiles CSS so that way selectors point to compiled selectors. `compile` does this internally.
+   ```ts
+   const css = compiler.compileCSS("css-containing-mhtml-selectors-here");
+   ```
    ### Adding Default CSS
-    Adds default css for elements such as `<tooltip>` to the output. Wrap this around `compile` if used..
-    ```ts
-    const css = compiler.addDefaultCSS("html-to-add-to")
-    ```
-   And there you go. Learn mHTML, and you'll never go back.
+   Adds default css for elements such as `<tooltip>` to the output. Wrap this around `compile` if used..
+   ```ts
+   const css = compiler.addDefaultCSS("html-to-add-to")
+   ```
+  And there you go. Learn mHTML, and you'll never go back.
