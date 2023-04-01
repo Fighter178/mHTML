@@ -93,3 +93,25 @@ mHTML = compiler.addDefaultCSS(mHTML);
 ```
 This creates a <style> element at the end of the page, which styles mHTML elements. 
 This does `not` compile the CSS, which doesn't require compilation. This simply adds a style element to the code with basic css for `<tooltip>` and other elements.
+## Using the compiler
+   Include the script tag (coming to NPM soon, currently just clone this repo), and add this
+   ```ts
+         import mHTMLCompiler from "path/to/file/here";
+         const compiler =  new mHTMLCompiler();
+   ```
+   ### Compiling a string
+   ```ts
+       const compiled = compiler.compile("string here", ignoreThisArg, branding?, allowHalt?);
+       // compiled is compiled mHTML. Add to document.
+   ```
+   ### Compiling CSS
+    Compiles CSS so that way selectors point to compiled selectors. `compile` does this internally.
+    ```
+    const css = compiler.compileCSS("css-containing-mhtml-selectors-here");
+    ```
+   ### Adding Default CSS
+    Adds default css for elements such as `<tooltip>` to the output. Wrap this around `compile` if used..
+    ```ts
+    const css = compiler.addDefaultCSS("html-to-add-to")
+    ```
+   And there you go. Learn mHTML, and you'll never go back.
